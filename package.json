@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "./lib/index.js",
+  "bin": {
+    "build-swagger": "./lib/bin/build-swagger.js"
+  },
   "directories": {
     "test": "test"
   },

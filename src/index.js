@@ -19,7 +19,7 @@ const loadDefaultSwaggerJS = () => {
 export default ({
   spec = loadDefaultSwaggerJS(),
   jsonPath = './swagger.json',
-}) => {
+} = {}) => {
   if (!spec) {
     throw new Error('swagger.js file not found')
   }

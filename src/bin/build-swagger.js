@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import buildSwagger from '../'
 
 const build = async () => {
