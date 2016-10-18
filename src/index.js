@@ -1,10 +1,11 @@
 import swaggerJSDoc from 'swagger-jsdoc'
+import { join } from 'path'
 import fs from 'fs'
 
 const requireNoThrow = (file) => {
   /* eslint-disable global-require */
   try {
-    return require(file)
+    return require(join(process.cwd(), file))
   } catch (err) {
     return false
   }
@@ -16,10 +17,13 @@ const loadDefaultSwaggerJS = () => {
   return requireNoThrow('./src/swagger.js')
 }
 
-export default ({
+const build = ({
   spec = loadDefaultSwaggerJS(),
   jsonPath = './swagger.json',
 } = {}) => {
+  if (typeof spec === 'string') {
+    return build({ jsonPath, spec: requireNoThrow(spec) })
+  }
   if (!spec) {
     throw new Error('swagger.js file not found')
   }
@@ -32,3 +36,5 @@ export default ({
     })
   })
 }
+
+export default build

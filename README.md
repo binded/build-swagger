@@ -21,5 +21,10 @@ Requires Node v6+
 See [./test](./test) directory for usage examples.
 
 ```bash
-build-swagger
+build-swagger [--spec] [--jsonPath]
+# by default, spec looks for ./swagger.js or ./src/swagger.js, and
+# jsonPath is ./swagger.json
+
+# example:
+build-swagger.js --spec ./src/swagger.js --jsonPath myswagger.json
 ```

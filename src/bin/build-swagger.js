@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
+import { argv } from 'yargs'
+
 import buildSwagger from '../'
 
 const build = async () => {
   try {
-    await buildSwagger()
+    await buildSwagger(argv)
     console.log('Built swagger.json')
   } catch (err) {
     console.error(err)
