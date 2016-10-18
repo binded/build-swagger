@@ -6,8 +6,12 @@ import buildSwagger from '../'
 
 const build = async () => {
   try {
-    await buildSwagger(argv)
-    console.log('Built swagger.json')
+    const { jsonPath, data } = await buildSwagger(argv)
+    if (jsonPath) {
+      console.log(`Built ${jsonPath}`)
+    } else {
+      console.log(data)
+    }
   } catch (err) {
     console.error(err)
     process.exit(1)

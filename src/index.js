@@ -19,7 +19,7 @@ const loadDefaultSwaggerJS = () => {
 
 const build = ({
   spec = loadDefaultSwaggerJS(),
-  jsonPath = './swagger.json',
+  jsonPath,
 } = {}) => {
   if (typeof spec === 'string') {
     return build({ jsonPath, spec: requireNoThrow(spec) })
@@ -30,9 +30,10 @@ const build = ({
   const swaggerSpec = swaggerJSDoc(spec)
   const data = JSON.stringify(swaggerSpec, null, null, true)
   return new Promise((resolve, reject) => {
+    if (!jsonPath) return resolve({ jsonPath, data })
     fs.writeFile(jsonPath, data, (err) => {
       if (err) return reject(err)
-      resolve({ jsonPath })
+      resolve({ jsonPath, data })
     })
   })
 }

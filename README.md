@@ -22,8 +22,8 @@ See [./test](./test) directory for usage examples.
 
 ```bash
 build-swagger [--spec] [--jsonPath]
-# by default, spec looks for ./swagger.js or ./src/swagger.js, and
-# jsonPath is ./swagger.json
+# by default, spec looks for ./swagger.js or ./src/swagger.js
+# if jsonPath is not specified, it will output to stdout
 
 # example:
 build-swagger.js --spec ./src/swagger.js --jsonPath myswagger.json
