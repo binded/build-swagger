@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/blockai/build-swagger.svg?branch=master)](https://travis-ci.org/blockai/build-swagger)
 
+Simple wrapper around [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc)
+
 Builds a swagger.json based on a swagger.js specification file. By
 default, tries to find `swagger.js` in `./swagger.js` and
 `./src/swagger.js` and writes to `./swagger.json`.
