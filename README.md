@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/blockai/build-swagger.svg?branch=master)](https://travis-ci.org/blockai/build-swagger)
 
-WIP
+Builds a swagger.json based on a swagger.js specification file. By
+default, tries to find `swagger.js` in `./swagger.js` and
+`./src/swagger.js` and writes to `./swagger.json`.
 
 ## Install
 
@@ -15,3 +17,7 @@ Requires Node v6+
 ## Usage
 
 See [./test](./test) directory for usage examples.
+
+```bash
+build-swagger
+```
